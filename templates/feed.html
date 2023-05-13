@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BFeed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .post {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .post h2 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        .post p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>BFeed</h1>
+    {% for post in posts %}
+    <div class="post">
+        <h2>{{ post["titulo"] }}</h2>
+        <p>Por: {{ post["autor"] }}</p>
+        <p>Data: {{ post["data"] }}</p>
+        <p>{{ post["conteudo"] }}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>
